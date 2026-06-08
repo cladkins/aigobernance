@@ -1,4 +1,4 @@
-# AIShield — AI Governance Survey
+# AI Governance Kickstart
 
 A static clone of the [aishield365.ai](https://www.aishield365.ai/) "AI Governance
 in 10 minutes" experience by BlueVoyant, re-themed to match
@@ -63,7 +63,7 @@ renders a board-ready dashboard:
 ### Download
 
 Enter name + email and the app builds and downloads
-`AIShield-Governance-Package-<date>.zip`:
+`AI-Governance-Kickstart-Package-<date>.zip`:
 
 - `01-Executive-Summary.md` — board-ready overview (score, maturity, top risks, next steps)
 - `02-AI-Governance-Policy.md` — NIST AI RMF 1.0-aligned policy

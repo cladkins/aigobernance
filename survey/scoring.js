@@ -1,9 +1,9 @@
-/* AIShield scoring & analysis engine.
+/* AI Governance Kickstart scoring & analysis engine.
  * Turns raw BLOCK/ALLOW decisions into the things a CISO actually reports on:
  * a weighted governance posture score, residual risk, NIST AI RMF function
  * coverage, compliance crosswalk, top residual risks, and a phased roadmap.
  * Pure functions, no DOM, no dependencies. */
-window.AISHIELD = window.AISHIELD || {};
+window.AIGK = window.AIGK || {};
 (function () {
   'use strict';
 
@@ -216,5 +216,5 @@ window.AISHIELD = window.AISHIELD || {};
     };
   }
 
-  window.AISHIELD.scoring = { analyze, enrich, SEV_LABEL, DOMAINS };
+  window.AIGK.scoring = { analyze, enrich, SEV_LABEL, DOMAINS };
 })();

@@ -61,8 +61,8 @@ window.SURVEY_DATA={
       "preamble": "What it is: MCP (Model Context Protocol) servers and plugins extend Claude Code Desktop/CLI/IDE to your tools — Jira, Salesforce, your CRM, internal databases. The enforceable controls are managed-settings.json policy, managed-mcp.json for a fixed MCP set, and managed marketplace restrictions.",
       "if_no": "Deploy managed-settings.json with strict marketplace/plugin restrictions and managed-mcp.json via MDM (Jamf/Intune) so only org-approved MCPs/plugins can be used.",
       "nist_alignment": "AI RMF Manage 2.2 + CSF Protect PR.PS",
-      "note": "AIShield ships a lockdown baseline. IT must replace the empty managed-mcp.json server map with approved MCP entries before rollout if any MCPs should remain available.",
-      "consultantNote": "The actual enforceable controls here are not a click-to-approve UI. Claude Code supports managed MCP control through managed-mcp.json, MCP allow/deny policy through managed settings, and marketplace restrictions through strictKnownMarketplaces / strictPluginOnlyCustomization. AIShield ships a conservative empty-server baseline because your approved MCP list is tenant-specific. Before production rollout, convert the approved MCP inventory into managed-mcp.json entries or keep the empty map to disable MCP entirely. For plugins, restrict marketplace sources first; otherwise a plugin can become a supply-chain path for skills, hooks, agents, and MCP servers.",
+      "note": "AI Governance Kickstart ships a lockdown baseline. IT must replace the empty managed-mcp.json server map with approved MCP entries before rollout if any MCPs should remain available.",
+      "consultantNote": "The actual enforceable controls here are not a click-to-approve UI. Claude Code supports managed MCP control through managed-mcp.json, MCP allow/deny policy through managed settings, and marketplace restrictions through strictKnownMarketplaces / strictPluginOnlyCustomization. AI Governance Kickstart ships a conservative empty-server baseline because your approved MCP list is tenant-specific. Before production rollout, convert the approved MCP inventory into managed-mcp.json entries or keep the empty map to disable MCP entirely. For plugins, restrict marketplace sources first; otherwise a plugin can become a supply-chain path for skills, hooks, agents, and MCP servers.",
       "id": "ctrl_4",
       "vendor": "Anthropic"
     },
@@ -352,7 +352,7 @@ window.SURVEY_DATA={
       ],
       "if_no": "Set cli_auth_credentials_store = \"keyring\" in managed_config.toml and, where the ChatGPT workspace ID is known, configure forced_login_method / forced_chatgpt_workspace_id through managed configuration.",
       "nist_alignment": "CSF Protect PR.IP",
-      "note": "OpenAI documents cli_auth_credentials_store and forced login/workspace settings; AIShield does not emit undocumented prevent_home_redirection keys.",
+      "note": "OpenAI documents cli_auth_credentials_store and forced login/workspace settings; AI Governance Kickstart does not emit undocumented prevent_home_redirection keys.",
       "consultantNote": "The durable control here is credential and workspace hygiene, not a fictional CODEX_HOME lockdown key. Prefer the OS credential store over auth.json, force ChatGPT workspace login when your tenant can supply the workspace ID, and use endpoint controls to prevent users from launching Codex with unapproved environment overrides. Treat ~/.codex/auth.json like a password whenever file-based auth is unavoidable.",
       "id": "ctrl_24",
       "vendor": "OpenAI"
