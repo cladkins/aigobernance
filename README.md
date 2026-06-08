@@ -31,7 +31,7 @@ the logo, and the footer CTA banner. The theme is applied by remapping Tailwind'
 `assets/styles.css`, so all markup — including the survey's JS-generated controls —
 adopts it automatically.
 
-## The survey
+## The assessment
 
 1. **CISO persona / strategy** — posture, regulations, certifications/frameworks,
    AI technologies, operating systems, and data-governance maturity. Posture sets
@@ -43,10 +43,35 @@ adopts it automatically.
    tracks coverage.
 3. **Global AI operating instructions** — free-text guidance bundled into the
    package.
-4. **Download** — enter name + email, and the app builds and downloads
-   `AIShield-Governance-Package-<date>.zip` containing a tailored policy
-   (`policy/AI-Governance-Policy.md`), `selections.json`, and
-   Intune / Jamf / PowerShell / Bash config skeletons.
+
+### Posture analysis (`scoring.js`)
+
+"Analyze My Posture" runs a weighted scoring engine over the control decisions and
+renders a board-ready dashboard:
+
+- **Governance Posture Score** (severity-weighted control coverage) and a
+  **Residual Risk Index**
+- **Maturity tier** (NIST AI RMF-style: Partial → Risk-Informed → Repeatable →
+  Adaptive), gated on data-governance maturity
+- **NIST AI RMF function coverage** (Govern / Map / Measure / Manage) and
+  **coverage by control domain**
+- **Compliance readiness** per selected framework/regulation, with open gaps
+- **Top residual risks** (highest-severity permitted behaviors) with mitigations
+- **Phased implementation roadmap** (quick wins → rollout → hardening), sequenced
+  by impact and effort, with suggested owners
+
+### Download
+
+Enter name + email and the app builds and downloads
+`AIShield-Governance-Package-<date>.zip`:
+
+- `01-Executive-Summary.md` — board-ready overview (score, maturity, top risks, next steps)
+- `02-AI-Governance-Policy.md` — NIST AI RMF 1.0-aligned policy
+- `03-Risk-Register.csv` — every control: severity, residual risk, owner, phase (Excel/GRC-ready)
+- `04-Implementation-Roadmap.md` — phased plan with enforcement steps
+- `05-Compliance-Crosswalk.md` — coverage and gaps per obligation
+- `selections.json` — answers, decisions, and computed analysis
+- `configs/` — Intune / Jamf / PowerShell / Bash deployment skeletons
 
 ## Running locally
 

@@ -59,10 +59,10 @@
     </nav>
 
     <main class="flex-1">
-      <div class="max-w-4xl mx-auto px-6 py-12 w-full">
+      <div id="surveyView" class="max-w-4xl mx-auto px-6 py-12 w-full">
         <header class="mb-10">
-          <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">AI Governance Survey</h1>
-          <p class="text-slate-400 leading-relaxed">Many CISOs struggle to find the right balance between security and unleashing the power of AI. BlueVoyant is here to help you navigate that process, and one of our security experts will gladly offer a free call to any CISO who wants to discuss the trade-offs covered in this survey.</p>
+          <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">AI Governance Assessment</h1>
+          <p class="text-slate-400 leading-relaxed">Many CISOs struggle to find the right balance between security and unleashing the power of AI. Set your strategy and control decisions below, then get an instant board-ready posture analysis and a download-ready governance package. BlueVoyant's security experts will gladly offer a free call to any CISO who wants to discuss the trade-offs.</p>
           <a href="https://www.bluevoyant.com/request-a-demo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-blue-400 hover:text-blue-300">Book a free call
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
           </a>
@@ -101,13 +101,16 @@
         <!-- Generate -->
         <section class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
           <p class="text-slate-300 mb-1"><span id="enforceCount" class="font-semibold text-white">0</span> controls will be enforced in your deployment.</p>
-          <p class="text-sm text-slate-500 mb-5">Ready to generate your policy and download your governance package?</p>
+          <p class="text-sm text-slate-500 mb-5">See your governance posture, residual risk, and a board-ready roadmap — then download the full package.</p>
           <button id="reviewBtn" class="inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-500 h-12 rounded-md px-6 text-base font-semibold transition-colors gap-2">
-            Review &amp; Get My Package
+            Analyze My Posture
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
           </button>
         </section>
       </div>
+
+      <!-- Results dashboard (rendered by survey.js) -->
+      <div id="resultsView" class="hidden max-w-6xl mx-auto px-6 py-12 w-full"></div>
     </main>
 
     <footer class="text-white mt-16 border-t border-slate-800" style="background-color:#0a0a0a">
@@ -120,7 +123,7 @@
     <div class="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl">
       <div id="modalForm">
         <h3 class="text-xl font-bold text-white mb-1">Get your governance package</h3>
-        <p class="text-sm text-slate-400 mb-5">Enter your details and we'll build your NIST AI RMF 1.0-aligned policy and deployment configs for an instant download.</p>
+        <p class="text-sm text-slate-400 mb-5">Enter your details and we'll build your board-ready executive summary, NIST AI RMF 1.0 policy, risk register, phased roadmap, compliance crosswalk, and deployment configs — instant download.</p>
         <label class="block text-sm font-medium text-slate-300 mb-1" for="nameInput">Full name</label>
         <input id="nameInput" type="text" autocomplete="name" class="w-full mb-4 rounded-lg border border-slate-700 bg-slate-950 p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe" />
         <label class="block text-sm font-medium text-slate-300 mb-1" for="emailInput">Work email</label>
@@ -144,6 +147,7 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="scoring.js"></script>
   <script src="survey.js"></script>
 </body>
 </html>
