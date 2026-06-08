@@ -6,10 +6,32 @@
   <title>AIShield — AI Governance Survey | Patriot Consulting</title>
   <meta name="description" content="Answer a few questions about your AI strategy and selected controls, then download a NIST AI RMF 1.0-aligned governance package — policy document and deployment configs." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../assets/vendor/tailwind.js"></script>
   <script>
+    // Tailwind palette remapped to the defenderxdr.com theme (see landing page).
     if (typeof tailwind !== 'undefined') {
-      tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter','system-ui','sans-serif'], heading: ['Montserrat','sans-serif'] } } } };
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              heading: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              slate: {
+                50: '#f7f8f9', 100: '#f2f3f5', 200: '#e4e6ea', 300: '#c2c6cd',
+                400: '#9aa0aa', 500: '#7e858f', 600: '#565a61', 700: '#3a3d43',
+                800: '#26292e', 900: '#141414', 950: '#0a0a0a',
+              },
+              blue: {
+                300: '#6f9dff', 400: '#3a7cff', 500: '#2a6bff',
+                600: '#0558ff', 700: '#0046d6',
+              },
+            },
+          },
+        },
+      };
     }
   </script>
   <link rel="stylesheet" href="../assets/styles.css" />
@@ -21,7 +43,7 @@
     <!-- Sticky status bar -->
     <nav class="border-b border-slate-800 px-6 py-3 sticky top-0 z-30 backdrop-blur bg-slate-950/70">
       <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
-        <a href="/" class="text-xl font-bold text-white shrink-0">AI<span class="text-blue-400">Shield</span></a>
+        <a href="/" class="text-xl font-bold text-white shrink-0">AI<span class="gradient-text">Shield</span></a>
         <div class="flex items-center gap-4 text-sm">
           <div class="text-slate-300"><span id="appliedCount" class="font-mono text-blue-400 font-semibold">0</span> / <span id="totalCount" class="font-mono">0</span> controls applied</div>
           <div class="flex items-center gap-2">
@@ -88,7 +110,7 @@
       </div>
     </main>
 
-    <footer class="text-white mt-16" style="background-color:oklch(0.18 0.02 240)">
+    <footer class="text-white mt-16 border-t border-slate-800" style="background-color:#0a0a0a">
       <div class="max-w-7xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">© 2026 Patriot Consulting. All rights reserved.</div>
     </footer>
   </div>

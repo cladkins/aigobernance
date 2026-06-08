@@ -1,45 +1,55 @@
+/* Theme matched to defenderxdr.com (BlueVoyant DefenderXDR) for embedding. */
 :root {
-  /* Matches the original site's dark navy background: hsl(222 47% 5%) */
-  --background: 222 47% 5%;
+  --dx-bg: #0d0d0d;          /* hsl(0 0% 5%)   page background */
+  --dx-card: #141414;        /* hsl(0 0% 8%)   card surface    */
+  --dx-border: #292d33;      /* hsl(220 10% 18%) borders        */
+  --dx-fg: #fafaff;          /* hsl(240 100% 99%) foreground    */
+  --dx-muted: #7e858f;       /* hsl(220 10% 55%) muted text     */
+  --dx-primary: #0558ff;     /* hsl(220 100% 51%) primary blue  */
+  --dx-grad-from: #3a7cff;   /* gradient accent start (blue)    */
+  --dx-grad-to: #8dedc7;     /* gradient accent end (mint)      */
 }
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  color: #fff;
+  color: var(--dx-fg);
+  background-color: var(--dx-bg);
 }
 
-/* Radial-gradient backdrop lifted from the original stylesheet */
+/* Near-black page backdrop with a faint primary-blue glow, à la DefenderXDR. */
 .gradient-bg {
   background:
-    radial-gradient(ellipse at top left, #02143166 0, transparent 60%),
-    radial-gradient(ellipse at bottom right, #0210274d 0, transparent 60%),
-    hsl(var(--background));
+    radial-gradient(ellipse at top, rgba(5, 88, 255, 0.10) 0, transparent 55%),
+    var(--dx-bg);
+}
+
+/* DefenderXDR's signature blue -> mint gradient used on hero accent words. */
+.gradient-text {
+  background: linear-gradient(135deg, var(--dx-grad-from) 0%, var(--dx-grad-to) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Same gradient as a fill (e.g. footer CTA banner, accent rules). */
+.gradient-fill {
+  background: linear-gradient(135deg, var(--dx-grad-from) 0%, var(--dx-grad-to) 100%);
 }
 
 .font-heading {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* Entrance animation replacing the site's framer-motion fade/slide-up */
+/* Entrance animation (replaces the original site's framer-motion). */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 .fade-in-up {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
-
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
-    opacity: 1;
-    animation: none;
-  }
+  .fade-in-up { opacity: 1; animation: none; }
 }
