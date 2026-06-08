@@ -1,7 +1,7 @@
 # AIShield — AI Governance Survey
 
 A static clone of the [aishield365.ai](https://www.aishield365.ai/) "AI Governance
-in 10 minutes" experience by Patriot Consulting, re-themed to match
+in 10 minutes" experience by BlueVoyant, re-themed to match
 [defenderxdr.com](https://defenderxdr.com/) (BlueVoyant DefenderXDR) for embedding
 into that site.
 
